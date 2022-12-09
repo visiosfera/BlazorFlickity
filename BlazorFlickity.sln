@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33103.201
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorFlickity", "BlazorFlickity\BlazorFlickity.csproj", "{29651C84-ED72-49D1-896B-EA615E7B76D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29651C84-ED72-49D1-896B-EA615E7B76D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29651C84-ED72-49D1-896B-EA615E7B76D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29651C84-ED72-49D1-896B-EA615E7B76D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29651C84-ED72-49D1-896B-EA615E7B76D9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {696E2B72-2EB5-476E-8EDB-B19DEC93BD69}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,123 @@
+﻿@page "/"
+
+@using BlazorFlickity.Components.Carousel
+@using BlazorFlickity.Models;
+
+<div class="position-absolute w-100 bottom-50" style="padding: 0 20%;">
+    
+    <Carousel Title="Playlists" Items="@Items" OnSelectedIndexChanged="(x) => SelectionChanged(x)" @bind-Value="CurrentItem"></Carousel>
+
+    <div class="text-center mt-5">        
+        <h5 class="text-white">@Message</h5>
+        
+        <div class="text-center">
+            <button class="btn btn-info me-2" @onclick="Change">Alterar aleatoriamente</button>
+        </div>
+    </div>
+
+</div>
+
+@code
+{
+    public List<Items> Items { get; set; }
+    public Items CurrentItem { get; set; }
+
+    public string Message { get; set; } = "...";
+
+    protected override Task OnInitializedAsync()
+    {
+        Items = new List<Items>()
+        {
+            new Items
+            {
+                    Name = "Pop Sertanejo",
+                    Index = 0
+            },
+            new Items
+            {
+                    Name = "Sucessos",
+                    Index = 1
+            },
+            new Items
+            {
+                    Name = "Balada",
+                    Index = 2
+            },
+            new Items
+            {
+                    Name = "Sertanejo",
+                    Index = 3
+            },
+            new Items
+            {
+                    Name = "Mix",
+                    Index = 4
+            },
+            new Items
+            {
+                    Name = "Light",
+                    Index = 5
+            },
+            new Items
+            {
+                    Name = "Soft",
+                    Index = 6
+            },
+            new Items
+            {
+                    Name = "Lounge",
+                    Index = 7
+            },
+            new Items
+            {
+                    Name = "Light Pop",
+                    Index = 8
+            },
+            new Items
+            {
+                    Name = "Shopping",
+                    Index = 9
+            },
+            new Items
+            {
+                    Name = "Magazine",
+                    Index = 10
+            },
+            new Items
+            {
+                    Name = "Instrumental",
+                    Index = 11
+            },
+            new Items
+            {
+                    Name = "Carnaval",
+                    Index = 12
+            },
+            new Items
+            {
+                    Name = "Infantil",
+                    Index = 13
+            }
+        };
+
+        SetRandomCurrentItem();
+
+        return base.OnInitializedAsync();
+    }
+
+    protected async Task SelectionChanged(Items musicProfile)
+    {
+        Message = musicProfile.Name;
+    }
+
+    protected void Change()
+    {
+        SetRandomCurrentItem();
+    }
+
+    private void SetRandomCurrentItem()
+    {
+        var randomNumber = new Random().Next(0, 10);
+        CurrentItem = Items.FirstOrDefault(x => x.Index == randomNumber);
+    }
+}
